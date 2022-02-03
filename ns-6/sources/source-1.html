@@ -42,7 +42,7 @@ Current scope:     <a href="../../index.html">all classes</a>
     100%
   </span>
   <span class="absValue">
-    (7/7)
+    (8/8)
   </span>
 </td>
 <td class="coverageStat">
@@ -50,30 +50,33 @@ Current scope:     <a href="../../index.html">all classes</a>
     100%
   </span>
   <span class="absValue">
-    (23/23)
+    (27/27)
   </span>
 </td>
 </tr>
   <tr>
-    <td class="name">UserService$MockitoMock$2029663095</td>
+    <td class="name">UserService$MockitoMock$1815214740</td>
   </tr>
   <tr>
-    <td class="name">UserService$MockitoMock$2029663095$auxiliary$40oIO8I1</td>
+    <td class="name">UserService$MockitoMock$1815214740$auxiliary$5pwVqwqu</td>
   </tr>
   <tr>
-    <td class="name">UserService$MockitoMock$2029663095$auxiliary$9X67XtcU</td>
+    <td class="name">UserService$MockitoMock$1815214740$auxiliary$7mhFMua3</td>
   </tr>
   <tr>
-    <td class="name">UserService$MockitoMock$2029663095$auxiliary$IDSVCpjN</td>
+    <td class="name">UserService$MockitoMock$1815214740$auxiliary$7MxRZEdq</td>
   </tr>
   <tr>
-    <td class="name">UserService$MockitoMock$2029663095$auxiliary$UXwjb2g5</td>
+    <td class="name">UserService$MockitoMock$1815214740$auxiliary$dcq5dxp6</td>
   </tr>
   <tr>
-    <td class="name">UserService$MockitoMock$2029663095$auxiliary$XFdnxO2H</td>
+    <td class="name">UserService$MockitoMock$1815214740$auxiliary$ogowl4Uf</td>
   </tr>
   <tr>
-    <td class="name">UserService$MockitoMock$2029663095$auxiliary$xznqlsmZ</td>
+    <td class="name">UserService$MockitoMock$1815214740$auxiliary$UPteDsgg</td>
+  </tr>
+  <tr>
+    <td class="name">UserService$MockitoMock$1815214740$auxiliary$w9hWhTny</td>
   </tr>
 <tr>
   <td class="name"><strong>Total</strong></td>
@@ -82,7 +85,7 @@ Current scope:     <a href="../../index.html">all classes</a>
     100%
   </span>
   <span class="absValue">
-    (7/7)
+    (8/8)
   </span>
 </td>
 <td class="coverageStat">
@@ -90,7 +93,7 @@ Current scope:     <a href="../../index.html">all classes</a>
     100%
   </span>
   <span class="absValue">
-    (23/23)
+    (27/27)
   </span>
 </td>
 </tr>
@@ -148,43 +151,54 @@ Current scope:     <a href="../../index.html">all classes</a>
 <b class="fc"><i class="no-highlight">45</i>&nbsp;        return userRepository.findAll();</b>
 <i class="no-highlight">46</i>&nbsp;    }
 <i class="no-highlight">47</i>&nbsp;
-<i class="no-highlight">48</i>&nbsp;    /**
-<i class="no-highlight">49</i>&nbsp;     * UPDATE user in database
-<i class="no-highlight">50</i>&nbsp;     * @param id ID of user to update
-<i class="no-highlight">51</i>&nbsp;     * @param user New details of User
-<i class="no-highlight">52</i>&nbsp;     * @return Return changed details of User
-<i class="no-highlight">53</i>&nbsp;     */
-<i class="no-highlight">54</i>&nbsp;    public User updateUser(Long id, User user){
-<b class="fc"><i class="no-highlight">55</i>&nbsp;        User userToUpdate = userRepository.findById(id).orElseThrow(()-&gt; {</b>
-<b class="fc"><i class="no-highlight">56</i>&nbsp;            throw new UserNotFoundException(&quot;User with ID &quot; + id + &quot; doesn&#39;t exist&quot;);</b>
-<i class="no-highlight">57</i>&nbsp;        });
-<b class="fc"><i class="no-highlight">58</i>&nbsp;        userToUpdate.setUsername(user.getUsername());</b>
-<b class="fc"><i class="no-highlight">59</i>&nbsp;        userToUpdate.setPassword(user.getPassword());</b>
-<b class="fc"><i class="no-highlight">60</i>&nbsp;        userToUpdate.setFirstName(user.getFirstName());</b>
-<b class="fc"><i class="no-highlight">61</i>&nbsp;        userToUpdate.setLastName(user.getLastName());</b>
-<b class="fc"><i class="no-highlight">62</i>&nbsp;        userToUpdate.setAge(user.getAge());</b>
-<b class="fc"><i class="no-highlight">63</i>&nbsp;        return userRepository.save(userToUpdate);</b>
-<i class="no-highlight">64</i>&nbsp;    }
-<i class="no-highlight">65</i>&nbsp;
-<i class="no-highlight">66</i>&nbsp;    /**
-<i class="no-highlight">67</i>&nbsp;     * DELETE User in database
-<i class="no-highlight">68</i>&nbsp;     * @param id ID of the user to be deleted
-<i class="no-highlight">69</i>&nbsp;     * @return Returns deleted user
-<i class="no-highlight">70</i>&nbsp;     */
-<i class="no-highlight">71</i>&nbsp;    public User deleteUser(Long id){
-<b class="fc"><i class="no-highlight">72</i>&nbsp;        User deletedUser = userRepository.findById(id).orElseThrow(()-&gt; {</b>
-<b class="fc"><i class="no-highlight">73</i>&nbsp;            throw new UserNotFoundException(&quot;User with ID &quot; + id + &quot; doesn&#39;t exist&quot;);</b>
-<i class="no-highlight">74</i>&nbsp;        });
-<b class="fc"><i class="no-highlight">75</i>&nbsp;        userRepository.deleteById(id);</b>
-<b class="fc"><i class="no-highlight">76</i>&nbsp;        return new User(</b>
-<b class="fc"><i class="no-highlight">77</i>&nbsp;                deletedUser.getUsername(),</b>
-<b class="fc"><i class="no-highlight">78</i>&nbsp;                deletedUser.getPassword(),</b>
-<b class="fc"><i class="no-highlight">79</i>&nbsp;                deletedUser.getFirstName(),</b>
-<b class="fc"><i class="no-highlight">80</i>&nbsp;                deletedUser.getLastName(),</b>
-<b class="fc"><i class="no-highlight">81</i>&nbsp;                deletedUser.getAge()</b>
-<i class="no-highlight">82</i>&nbsp;        );
-<i class="no-highlight">83</i>&nbsp;    }
-<i class="no-highlight">84</i>&nbsp;}
+<i class="no-highlight">48</i>&nbsp;    public User getUserByUsername(String username){
+<b class="fc"><i class="no-highlight">49</i>&nbsp;        if (userRepository.existsByUsername(username)){</b>
+<b class="fc"><i class="no-highlight">50</i>&nbsp;            System.out.println(username);</b>
+<b class="fc"><i class="no-highlight">51</i>&nbsp;            return userRepository.findByUsername(username);</b>
+<i class="no-highlight">52</i>&nbsp;        }else {
+<b class="fc"><i class="no-highlight">53</i>&nbsp;            throw new UserNotFoundException(&quot;User with username &#39;&quot;+ username + &quot;&#39; not found.&quot;);</b>
+<i class="no-highlight">54</i>&nbsp;        }
+<i class="no-highlight">55</i>&nbsp;
+<i class="no-highlight">56</i>&nbsp;    }
+<i class="no-highlight">57</i>&nbsp;
+<i class="no-highlight">58</i>&nbsp;
+<i class="no-highlight">59</i>&nbsp;    /**
+<i class="no-highlight">60</i>&nbsp;     * UPDATE user in database
+<i class="no-highlight">61</i>&nbsp;     * @param id ID of user to update
+<i class="no-highlight">62</i>&nbsp;     * @param user New details of User
+<i class="no-highlight">63</i>&nbsp;     * @return Return changed details of User
+<i class="no-highlight">64</i>&nbsp;     */
+<i class="no-highlight">65</i>&nbsp;    public User updateUser(Long id, User user){
+<b class="fc"><i class="no-highlight">66</i>&nbsp;        User userToUpdate = userRepository.findById(id).orElseThrow(()-&gt; {</b>
+<b class="fc"><i class="no-highlight">67</i>&nbsp;            throw new UserNotFoundException(&quot;User with ID &quot; + id + &quot; doesn&#39;t exist&quot;);</b>
+<i class="no-highlight">68</i>&nbsp;        });
+<b class="fc"><i class="no-highlight">69</i>&nbsp;        userToUpdate.setUsername(user.getUsername());</b>
+<b class="fc"><i class="no-highlight">70</i>&nbsp;        userToUpdate.setPassword(user.getPassword());</b>
+<b class="fc"><i class="no-highlight">71</i>&nbsp;        userToUpdate.setFirstName(user.getFirstName());</b>
+<b class="fc"><i class="no-highlight">72</i>&nbsp;        userToUpdate.setLastName(user.getLastName());</b>
+<b class="fc"><i class="no-highlight">73</i>&nbsp;        userToUpdate.setAge(user.getAge());</b>
+<b class="fc"><i class="no-highlight">74</i>&nbsp;        return userRepository.save(userToUpdate);</b>
+<i class="no-highlight">75</i>&nbsp;    }
+<i class="no-highlight">76</i>&nbsp;
+<i class="no-highlight">77</i>&nbsp;    /**
+<i class="no-highlight">78</i>&nbsp;     * DELETE User in database
+<i class="no-highlight">79</i>&nbsp;     * @param id ID of the user to be deleted
+<i class="no-highlight">80</i>&nbsp;     * @return Returns deleted user
+<i class="no-highlight">81</i>&nbsp;     */
+<i class="no-highlight">82</i>&nbsp;    public User deleteUser(Long id){
+<b class="fc"><i class="no-highlight">83</i>&nbsp;        User deletedUser = userRepository.findById(id).orElseThrow(()-&gt; {</b>
+<b class="fc"><i class="no-highlight">84</i>&nbsp;            throw new UserNotFoundException(&quot;User with ID &quot; + id + &quot; doesn&#39;t exist&quot;);</b>
+<i class="no-highlight">85</i>&nbsp;        });
+<b class="fc"><i class="no-highlight">86</i>&nbsp;        userRepository.deleteById(id);</b>
+<b class="fc"><i class="no-highlight">87</i>&nbsp;        return new User(</b>
+<b class="fc"><i class="no-highlight">88</i>&nbsp;                deletedUser.getUsername(),</b>
+<b class="fc"><i class="no-highlight">89</i>&nbsp;                deletedUser.getPassword(),</b>
+<b class="fc"><i class="no-highlight">90</i>&nbsp;                deletedUser.getFirstName(),</b>
+<b class="fc"><i class="no-highlight">91</i>&nbsp;                deletedUser.getLastName(),</b>
+<b class="fc"><i class="no-highlight">92</i>&nbsp;                deletedUser.getAge()</b>
+<i class="no-highlight">93</i>&nbsp;        );
+<i class="no-highlight">94</i>&nbsp;    }
+<i class="no-highlight">95</i>&nbsp;}
 </div>
 </pre>
 </div>
@@ -211,7 +225,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2022-02-02 15:12</div>
+    <div style="float:right;">generated on 2022-02-03 21:44</div>
 </div>
 </body>
 </html>
